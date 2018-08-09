@@ -1,0 +1,414 @@
+@font-face {
+    font-family: 'star_jedi';
+    src: url('./../fonts/starjedi-webfont.eot');
+    src: url('./../fonts/starjedi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./../fonts/starjedi-webfont.woff2') format('woff2'),
+         url('./../fonts/starjedi-webfont.woff') format('woff'),
+         url('./../fonts/starjedi-webfont.ttf') format('truetype'),
+         url('./../fonts/starjedi-webfont.svg#star_jediregular') format('svg');
+         font-weight: normal;
+         font-style: normal;
+        }
+
+        *,
+        *::before,
+*::after {
+  box-sizing: border-box
+}
+
+body {
+  margin: 0;
+  background-color: #d7d7d7;
+  font-family: 'Rubik';
+  padding-top: 71px;
+}
+
+.spinner {
+  position: fixed;
+  z-index: 1000;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity linear .5s 0s,
+              height linear 0s 0s;
+  &__dots {
+    background-color: #d7d7d7;
+    width: 100%;
+    height: calc(100vh - 71px);
+    margin-top: 71px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__dot {
+    margin: 0 5px;
+    width: 20px;
+    height: 20px;
+    background-color:  #002663;
+    border-radius: 10px;
+    animation: spinner infinite 1.5s;
+  }
+  &__dot:nth-child(2) {
+    animation-delay: .33s
+  }
+  &__dot:nth-child(3) {
+    animation-delay: .66s
+  }
+  &--hidden {
+    height: 0;
+    opacity: 0;
+    transition: opacity linear .5s,
+                height linear 0s .5s;
+  }
+}
+
+.header {
+  width: 100%;
+  top: 0;
+  background-color: #002663;
+  position: fixed;
+  z-index: 50;
+  transition: top linear .5s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+}
+.title {
+  height: 71px;
+}
+.title h1 {
+  padding: 1rem 50px;
+  display: inline-block;
+  margin: 0;
+  font-size: 1.5em;;
+  font-family: 'star_jedi';
+  cursor: pointer;
+}
+.menu {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #002663;
+  display: flex;
+  box-shadow: 0 0 5px black;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color linear .5s,
+              right linear .35s .0s;
+  &:hover {
+    @media (hover: hover) {
+      background-color: #4d4f53;
+    }
+  }
+  &:active {
+    @media (hover: none) {
+      background-color: #4d4f53;
+    }
+  }
+  &__icon {
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #fff;
+    position: relative;
+    transition: width linear .4s 0s;
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 4px;
+      border-radius: 2px;
+      background-color: #fff;
+      position: absolute;
+      top: -10px;
+      right: 0;
+      transform: rotate(220deg);
+      transition: width linear .4s 0s,
+                  transform-origin linear 0s .4s;
+    }
+    &::after {
+      top: 10px;
+      transform: rotate(-220deg);
+    }
+  }
+}
+.arrow {
+  background-color: red;
+  right: 225px;
+  transition: right linear .35s .15s,
+              background-color linear .3s;
+  .menu__icon {
+    width: 30px;
+    transition: width linear .2s .3s;
+    &::before,
+    &::after {
+      right: calc(50% - 2px);
+      width: 16px;
+      transform-origin: right;
+      transition: width linear .4s .1s,
+                  transform-origin linear 0s .1s;
+    }
+    &::after {
+      top: 10px;
+    }
+  }
+  &:hover {
+    @media (hover: hover) {
+      background-color: #002663;
+    }
+  }
+  &:active {
+    @media (hover: none) {
+      background-color: #4d4f53;
+    }
+  }
+}
+
+.nav {
+  top: 0;
+  right: 0;
+  width: 0;
+  z-index: 99;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  transition: width linear 0s .5s;
+  &__container {
+    background-color: #4d4f53;
+    width: 0;
+    padding: 71px 0 0 0;
+    margin: 0;
+    list-style: none;
+    transition: width linear .5s;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.8);
+    // border-left: 5px solid white;
+  }
+  &__item {
+    font-family: 'star_jedi';
+    padding: 0.5rem 2rem;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    transition: background-color linear .3s;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      height: 2rem;
+      border-top: 1rem solid transparent;
+      border-right: 1rem solid transparent;
+      border-bottom: 1rem solid transparent;
+      border-left: 1rem solid #fff;
+    }
+    &:hover {
+      @media (hover: hover) {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+    &:active {
+      @media (hover: hover) {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+    &--black {
+        color: #000;
+      &::before {
+        border-left-color: #000;
+      }
+    }
+  }
+  div {
+    width: 0;
+    height: 100vh;
+  }
+}
+.nav-expand {
+  width: 100%;
+  transition: width linear 0s 0s;
+  .nav {
+    &__container {
+      width: 250px;
+      // transition: width linear .5s;
+
+    }
+  }
+  div {
+    width: calc(100% - 250px);
+  }
+}
+
+.main-container {
+  height: calc(100vh - 71px);
+  padding: 1em;
+}
+.index p {
+  text-align: center;
+}
+.subtitle {
+  font-family: 'star_jedi';
+  text-align: center;
+}
+.logo {
+  width: 100%;
+  max-width: 830px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.select {
+  &__title {
+    margin-top: 0;
+    font-family: 'star_jedi';
+    text-align: center;
+  }
+  &__options {
+    margin: 0 auto 1em;
+    display: block;
+    width: 250px;
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+  }
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.card {
+  background-color: #fff;
+  min-width: 280px;
+  width: 400px;
+  border-radius: 5px;
+  margin: 1em;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+ &__title {
+   background-color: rgba(0, 0, 0, 0.8);
+   text-align: center;
+   margin: 0;
+   padding: .5rem;
+   width: 100%;
+   position: absolute;
+   color: #fff;
+   font-family: 'star_jedi';
+ }
+ &__image {
+   width: 100%;
+   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+ }
+ &__text {
+   text-align: center;
+   margin: 8px 0;
+   &--black {
+     font-family: 'star_jedi';
+   }
+ }
+}
+
+.invisible {
+  display: none;
+}
+
+@media screen and (min-width: 680px) {
+  .card {
+    max-width: 280px;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .header {
+    height: 71px;
+  }
+  .title {
+    text-align: center;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .title h1 {
+    font-size: 3em;
+  }
+  .menu {
+    display: none;
+  }
+  .nav {
+    width: 100%;
+    height: 2em;
+    background-color: rgba(255, 255, 255, 0.432);
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8),
+                0 -5px 10px rgba(0, 0, 0, 0.6);
+    &__container {
+      height: 2em;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      border: 0;
+    }
+    &__item {
+      height: 2em;
+      padding: 0 1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+    div {
+      display: none;
+    }
+  }
+
+  .main-container {
+    height: calc(100vh - 103px);
+    position: relative;
+    top: 32px;
+  }
+}
+
+@media screen and (max-height: 370px ) {
+  .nav {
+    &__container {
+      padding-top: 60px;
+    }
+    &__item {
+      padding: 4px 2rem;
+      &::before {
+        top: 0;
+      }
+    }
+  }
+}
+
+@keyframes spinner {
+  0% {
+    background-color:  #002663;
+  }
+  50% {
+    background-color:  rgba(0, 38, 99, 0.1);
+  }
+  0% {
+    background-color:  #002663;
+  }
+}

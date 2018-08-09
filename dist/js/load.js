@@ -1,0 +1,6 @@
+'use strict';// En github
+if(window.location.href==='https://juananto11.github.io/api-starwars/'){window.location.search='?index'}// En desarroll
+// if (window.location.href === 'http://localhost:3000/') {
+//   window.location.search = `?index`
+// }
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxvYWQuanMiXSwibmFtZXMiOlsid2luZG93IiwibG9jYXRpb24iLCJocmVmIiwic2VhcmNoIl0sIm1hcHBpbmdzIjoiYUFBQTtBQUNBLEdBQUlBLE9BQU9DLFFBQVAsQ0FBZ0JDLElBQWhCLEdBQXlCLDRDQUE3QixDQUEyRSxDQUN6RUYsT0FBT0MsUUFBUCxDQUFnQkUsTUFBaEIsU0FDRCxDQUVEO0FBQ0E7QUFDQTtBQUNBIiwiZmlsZSI6ImxvYWQuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBFbiBnaXRodWJcbmlmICh3aW5kb3cubG9jYXRpb24uaHJlZiA9PT0gJ2h0dHBzOi8vanVhbmFudG8xMS5naXRodWIuaW8vYXBpLXN0YXJ3YXJzLycpIHtcbiAgd2luZG93LmxvY2F0aW9uLnNlYXJjaCA9IGA/aW5kZXhgXG59XG5cbi8vIEVuIGRlc2Fycm9sbFxuLy8gaWYgKHdpbmRvdy5sb2NhdGlvbi5ocmVmID09PSAnaHR0cDovL2xvY2FsaG9zdDozMDAwLycpIHtcbi8vICAgd2luZG93LmxvY2F0aW9uLnNlYXJjaCA9IGA/aW5kZXhgXG4vLyB9XG4iXX0=

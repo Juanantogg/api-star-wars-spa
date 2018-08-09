@@ -1,0 +1,157 @@
+doctype
+html(lang="es-MX")
+  head
+    meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+    meta(charset="UTF-8")
+    title API Start Wars
+    link(rel='shortcut icon', href='img/favicons/favicon.ico', type='image/x-icon')
+    link(rel='icon', href='img/favicons/favicon.ico', type='image/x-icon')
+    link(rel='apple-touch-icon', sizes='57x57', href='img/favicons/apple-icon-57x57.png')
+    link(rel='apple-touch-icon', sizes='60x60', href='img/favicons/apple-icon-60x60.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='img/favicons/apple-icon-72x72.png')
+    link(rel='apple-touch-icon', sizes='76x76', href='img/favicons/apple-icon-76x76.png')
+    link(rel='apple-touch-icon', sizes='114x114', href='img/favicons/apple-icon-114x114.png')
+    link(rel='apple-touch-icon', sizes='120x120', href='img/favicons/apple-icon-120x120.png')
+    link(rel='apple-touch-icon', sizes='144x144', href='img/favicons/apple-icon-144x144.png')
+    link(rel='apple-touch-icon', sizes='152x152', href='img/favicons/apple-icon-152x152.png')
+    link(rel='apple-touch-icon', sizes='180x180', href='img/favicons/apple-icon-180x180.png')
+    link(rel='icon', type='image/png', sizes='192x192', href='img/favicons/android-icon-192x192.png')
+    link(rel='icon', type='image/png', sizes='32x32', href='img/favicons/favicon-32x32.png')
+    link(rel='icon', type='image/png', sizes='96x96', href='img/favicons/favicon-96x96.png')
+    link(rel='icon', type='image/png', sizes='16x16', href='img/favicons/favicon-16x16.png')
+    meta(name='msapplication-TileImage', content='img/favicons/ms-icon-144x144.png')
+    meta(name='msapplication-TileColor', content='#001331')
+    meta(name='theme-color', content='#001331')
+    link(href='https://fonts.googleapis.com/css?family=Rubik:400', rel='stylesheet')
+    link(rel="stylesheet", href="css/main.css")
+  body
+    .spinner#spinner
+      .spinner__dots
+        .spinner__dot
+        .spinner__dot
+        .spinner__dot
+    header#header.header
+      .title
+        h1#title star wars
+      .menu#menu
+        span.menu__icon
+      nav.nav#nav
+        #closeMenu
+        ul.nav__container
+          li#index.nav__item inicio
+          li#people.nav__item personajes
+          li#planets.nav__item planetas
+          li#films.nav__item películas
+          li#species.nav__item razas
+          li#vehicles.nav__item vehículos
+          li#starships.nav__item naves
+
+    main.main-container
+      #container-index.invisible.index
+        h3.subtitle bienvenido!!!
+        p Espero que disfrutes esta pequeña aplicación donde presento algunas cosas de las saga
+          span.highlight  star wars
+        img.logo(src="img/star-wars.jpg", alt="star wars")
+
+      #container-all.invisible
+
+      #container-people.invisible
+        .select
+          p.select__title Selecciona un Personaje
+          select.select__options#select-people
+            option(value="all") All
+            option(value="luke") Luke Skywalker
+            option(value="c-3po") C-3PO
+            option(value="r2-d2") R2-D2
+            option(value="darth") Darth Vader
+            option(value="leia") Leia Organa
+            option(value="owen") Owen Lars
+            option(value="beru") Beru White Lars
+            option(value="r5-d4") R5-D4
+            option(value="biggs") Biggs Darklighter
+            option(value="obi-wan") Obi-Wan Kenobi
+        #container-cards-people
+
+      #container-planets.invisible
+        .select
+          p.select__title Selecciona un Planeta
+          select.select__options#select-planets
+            option(value="all") All
+            option(value="alderaan") Alderaan
+            option(value="yavin") Yavin IV
+            option(value="hoth") Hoth
+            option(value="dagobah") Dagobah
+            option(value="bespin") Bespin
+            option(value="endor") Endor
+            option(value="naboo") Naboo
+            option(value="coruscant") Coruscant
+            option(value="kamino") Kamino
+            option(value="geonosis") Geonosis
+        #container-cards-planets
+
+      #container-films.invisible
+        .select
+          p.select__title Selecciona una Pelicula
+          select.select__options#select-films
+            option(value="all") All
+            option(value="episodio_4") A New Hope
+            option(value="episodio_2") Attack of the Clones
+            option(value="episodio_1") The Phantom Menace
+            option(value="episodio_3") Revenge of the Sith
+            option(value="episodio_6") Return of the Jedi
+            option(value="episodio_5") The Empire Strikes Back
+            option(value="episodio_7") The Force Awakens
+        #container-cards-films
+
+      #container-species.invisible
+        .select
+          p.select__title Selecciona una Raza
+          select.select__options#select-species
+            option(value="all") All
+            option(value="hutt") Hutt
+            option(value="yoda's") Yoda's species
+            option(value="trandoshan") Trandoshan
+            option(value="mon") Mon Calamari
+            option(value="ewok") Ewok
+            option(value="sullustan") Sullustan
+            option(value="neimodian") Neimodian
+            option(value="gungan") Gungan
+            option(value="toydarian") Toydarian
+            option(value="dug") Dug
+        #container-cards-species
+
+      #container-vehicles.invisible
+        .select
+          p.select__title Selecciona un Vehiculo
+          select.select__options#select-vehicles
+            option(value="all") All
+            option(value="sand") Sand Crawler
+            option(value="t-16") T-16 skyhopper
+            option(value="x-34") X-34 landspeeder
+            option(value="tie/ln") TIE/LN starfighter
+            option(value="snowspeeder") Snowspeeder
+            option(value="tie") TIE bomber
+            option(value="at-at") AT-AT
+            option(value="at-st") AT-ST
+            option(value="storm") Storm IV Twin-Pod cloud car
+            option(value="sail") Sail barge
+        #container-cards-vehicles
+
+      #container-starships.invisible
+        .select
+          p.select__title Selecciona una Nave
+          select.select__options#select-starships
+            option(value="all") All
+            option(value="executor") Executor
+            option(value="sentinel-class") Sentinel-class landing craft
+            option(value="death") Death Star
+            option(value="millennium") Millennium Falcom
+            option(value="y-wing") Y-wing
+            option(value="x-wing") X-wing
+            option(value="tie") TIE Advance x1
+            option(value="slave") Slave 1
+            option(value="imperial") Imperial shutter
+            option(value="ef76") EF76 Nebulon-B escort frigate
+        #container-cards-starships
+
+    script(type="text/javascript" src="js/main.js")
