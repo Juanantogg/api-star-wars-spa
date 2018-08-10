@@ -5,7 +5,7 @@ const cors = require('cors')
 const port = 8081
 
 app.use(cors())
-app.use(express.static(path.join(__dirname, 'dist')))
+app.use(express.static(path.join(__dirname, './')))
 
 // Rutas
 app.get('*', (req, res) => {
